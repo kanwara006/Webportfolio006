@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 320px;
+            margin-right: 2px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 90%;
+            padding: 7px;
+            margin: 2px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+           
+            
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+
+        }
+
+        button {
+            width: 30%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button[type="reset"] {
+            background: #b8b7b7; /* สีแดง */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Enter your username">
+        <p class="error" id="usernameError"></p>
+
+        <input type="password" id="password" placeholder="Enter your password">
+        <p class="error" id="passwordError"></p>
+
+        <div class="button-container">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector("#loginForm").onsubmit = function (event) {
+            event.preventDefault(); // ป้องกันการรีเฟรชหน้า
+
+            // รับค่าจากช่อง input
+            let username = document.querySelector("#username").value.trim();
+            let password = document.querySelector("#password").value.trim();
+
+            // รับค่าช่อง error message
+            let usernameError = document.querySelector("#usernameError");
+            let passwordError = document.querySelector("#passwordError");
+
+            // ล้างข้อความแจ้งเตือนเก่า
+            usernameError.textContent = "";
+            passwordError.textContent = "";
+
+            let isValid = true;
+
+            // ตรวจสอบ Username ต้องมีอย่างน้อย 8 ตัวอักษร
+            if (username.length < 8) {
+                usernameError.textContent = "Username must be 8 characters or more!";
+                isValid = false;
+            }
+
+            // ตรวจสอบ Password ต้องไม่ว่าง
+            if (password === "") {
+                passwordError.textContent = "Please input your password!";
+                isValid = false;
+            }
+
+            // ถ้าข้อมูลถูกต้อง
+            if (isValid) {
+                alert("Login successful!\nWelcome, " + username);
+                document.querySelector("#loginForm").reset(); // รีเซ็ตฟอร์ม
+            }
+        };
+    });
+</script>
+
+</body>
+</html>
