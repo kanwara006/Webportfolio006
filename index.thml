@@ -1,4 +1,4 @@
 <script>
   // Simulate a mouse click:
-  window.location = "src/Index.html";
+  window.location = "src/index.html";
 </script>
