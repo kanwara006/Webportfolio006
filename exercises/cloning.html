@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Menu</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-4">
+
+    <nav class="flex lg:flex bg-black text-white p-2 justify-between items-center">
+        <div class="flex space-x-4">
+            <button class="text-xl lg:ml-12">☰</button>
+            <h1 class="bg-red-600 p-1">CNN</h1>
+            <ul class="hidden lg:flex space-x-6 mt-1">
+                <li class="cursor-pointer hover:text-gray-400">World</li>
+                <li class="cursor-pointer hover:text-gray-400">US Politics</li>
+                <li class="cursor-pointer hover:text-gray-400">Business</li>
+                <li class="cursor-pointer hover:text-gray-400">Health</li>
+                <li class="cursor-pointer hover:text-gray-400">More</li>
+            </ul>
+        </div>
+
+        <div class="hidden sm:flex space-x-4 p-2">
+            <span class="p-2">Audio</span>
+            <span class="cursor-pointer p-2">🔍</span>
+            <button class="border px-1 py-1 rounded">Log In</button>
+        </div>
+    </nav>
+
+    <div class="hidden md:flex  mt-4 text-center 
+    w-full max-w-[1200px] mx-auto whitespace-nowrap md:justify-center md:space-x-4">
+        <span class="text-red-600 font-bold">PODCAST:</span> Tug of war |
+        <span class="text-red-600 font-bold">UKRAINE-RUSSIA:</span> In photos |
+        Help Ukraine | 
+        <span class="text-red-600 font-bold">TRENDING:</span> Hong Kong exodus |
+        'Ecovado' | Andriy Shevchenko | Anne Heche
+    </div>
+
+</body>
+</html>
